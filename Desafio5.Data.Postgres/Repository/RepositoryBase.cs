@@ -99,10 +99,5 @@ namespace Desafio5.Data.Postgres.Repository
         {
             _context.Set<K>().Remove(entity);
         }
-
-        public bool Commit()
-        {
-            return (_context.SaveChanges() >= 0);
-        }
     }
 }

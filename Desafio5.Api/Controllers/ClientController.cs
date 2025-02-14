@@ -27,18 +27,19 @@ public class ClientController(IClientService clientService, IMapper mapper) : Co
     }
     
     [HttpPost]
-    public IActionResult PostClient(ClientDto client)
+    public async Task<IActionResult> PostClient(ClientDto client)
     { 
         var mapClient = mapper.Map<ClientDto, Client>(client);
-        return Ok(clientService.PostClient(mapClient));
+        var clientAdd = await clientService.PostClient(mapClient);
+        return Ok(clientAdd);
     }
  
     [HttpPut("{id:guid}")]
     public async Task<IActionResult> UpdateClient([FromBody]ClientDto client, Guid id)
     {
         var mapClient = mapper.Map<ClientDto, Client>(client);
-        await clientService.UpdateClient(id, mapClient);
-        return Ok();
+        var clientUpdate = await clientService.UpdateClient(id, mapClient);
+        return Ok(clientUpdate);
     }
  
     [HttpDelete("{id:guid}")]

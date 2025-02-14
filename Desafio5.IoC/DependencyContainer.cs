@@ -22,7 +22,6 @@ public class DependencyContainer
             if (postGresConnectionString != null)
             {
                 options
-                    .UseLazyLoadingProxies()
                     .UseNpgsql(postGresConnectionString);
             }
         });
@@ -33,6 +32,5 @@ public class DependencyContainer
         //Unit of Work
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         //Repositorys
-        services.AddScoped<IClientRepository, ClientRepository>();
 	}
 }

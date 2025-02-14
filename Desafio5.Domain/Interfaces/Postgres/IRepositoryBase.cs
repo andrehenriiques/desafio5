@@ -20,7 +20,5 @@ namespace Desafio5.Domain.Interfaces.Postgres
         void Update(K entity);
         void Remove(K entity);
         void Delete(K entity);
-        
-        public bool Commit();
     }
 }

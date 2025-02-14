@@ -31,5 +31,10 @@ namespace Desafio5.Data.Repository
         public IPostgres.IRepositoryBase<Order> OrderRepository => _OrderRepository ?? (_OrderRepository = new PostgresRepo.RepositoryBase<Order>(_postgresContext));
         public IPostgres.IRepositoryBase<Client> ClientRepository => _ClientRepository ?? (_ClientRepository = new PostgresRepo.RepositoryBase<Client>(_postgresContext));
 
+
+        public async Task<bool> Commit()
+        {
+            return await _postgresContext.SaveChangesAsync() >= 0;
+        }
     }
 }

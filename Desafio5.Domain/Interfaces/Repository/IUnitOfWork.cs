@@ -10,5 +10,7 @@ namespace Desafio5.Domain.Interfaces.Repository
             IPostgres.IRepositoryBase<Product> ProductRepository { get; }
             IPostgres.IRepositoryBase<Order> OrderRepository { get; }
             IPostgres.IRepositoryBase<Client> ClientRepository { get; }
+
+            public Task<bool> Commit();
     }
 }
