@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio5.Data", "Desafio5.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio5.Data.Postgres", "Desafio5.Data.Postgres\Desafio5.Data.Postgres.csproj", "{77426E8B-DA0A-4698-BFA4-4C372CC86EF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafio5.MsgContracts", "Desafio5.MsgContracts\Desafio5.MsgContracts.csproj", "{A4887057-1D06-491F-B934-40D467CA9B47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +56,9 @@ Global
 		{77426E8B-DA0A-4698-BFA4-4C372CC86EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77426E8B-DA0A-4698-BFA4-4C372CC86EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77426E8B-DA0A-4698-BFA4-4C372CC86EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4887057-1D06-491F-B934-40D467CA9B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4887057-1D06-491F-B934-40D467CA9B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4887057-1D06-491F-B934-40D467CA9B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4887057-1D06-491F-B934-40D467CA9B47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

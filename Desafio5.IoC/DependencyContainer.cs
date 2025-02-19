@@ -1,12 +1,15 @@
 
+
+using Desafio5.MsgContracts.Command;
+
+using MassTransit;
 using Desafio5.Application.Services;
 using Microsoft.EntityFrameworkCore;
 using Desafio5.Data.Postgres.Context;
-using Desafio5.Data.Postgres.Repository;
 using Desafio5.Domain.Interfaces.Repository;
 using Desafio5.Data.Repository;
-using Desafio5.Domain.Interfaces.Repository;
 using Desafio5.Domain.Interfaces.Services;
+using Desafio5.MsgContracts.Interface;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
@@ -27,7 +30,27 @@ public class DependencyContainer
         });
         //Services
         services.AddScoped<IClientService,ClientService>();
-        //Queues
+        
+        services.AddMassTransit(x =>
+        {
+            x.AddConsumer<ClientCommand>();
+
+            x.UsingRabbitMq((context, cfg) =>
+            {
+                cfg.Host("rabbitmq://localhost", h =>
+                {
+                    h.Username("guest");
+                    h.Password("guest");
+                });
+
+                cfg.ReceiveEndpoint("create-client", e =>
+                {
+                    e.ConfigureConsumer<ClientCommand>(context);
+                });
+            });
+        });
+
+        //EndPointConvention
         //Extensions        
         //Unit of Work
         services.AddScoped<IUnitOfWork, UnitOfWork>();

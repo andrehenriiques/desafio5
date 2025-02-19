@@ -10,6 +10,7 @@ COPY ["Desafio5.Api/Desafio5.Api.csproj", "Desafio5.Api/"]
 COPY ["Desafio5.Domain/Desafio5.Domain.csproj", "Desafio5.Domain/"]
 COPY ["Desafio5.Tests/Desafio5.Tests.csproj", "Desafio5.Tests/"]
 COPY ["Desafio5.Application/Desafio5.Application.csproj", "Desafio5.Application/"]
+COPY ["Desafio5.MsgContracts/Desafio5.MsgContracts.csproj", "Desafio5.MsgContracts/"]
 COPY ["Desafio5.Data/Desafio5.Data.csproj", "Desafio5.Data/"]
 
 RUN dotnet restore "./Desafio5.Api/Desafio5.Api.csproj"
